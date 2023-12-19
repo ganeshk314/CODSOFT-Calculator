@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="decoration">
+        <h1>Calculator</h1>
+        <div class="container">
+            <div class="calculator-box">
+                <input type="text" id="display" disabled>
+
+                <button class="AC" onclick="clearDisplay()">AC</button>
+                <button class="mod" onclick="AddSymbol('%')">%</button>
+                <button  class="orang"  onclick="AddSymbol('/')">/</button>
+                
+                               
+                <button onclick="AddSymbol('7')">7</button>
+                <button onclick="AddSymbol('8')">8</button>
+                <button onclick="AddSymbol('9')">9</button>
+                <button  class="orang" onclick="AddSymbol('*')">*</button> 
+
+                <button onclick="AddSymbol('4')">4</button>
+                <button onclick="AddSymbol('5')">5</button>
+                <button onclick="AddSymbol('6')">6</button>
+                <button  class="orang" onclick="AddSymbol('-')">-</button>
+
+                <button onclick="AddSymbol('1')">1</button>
+                <button onclick="AddSymbol('2')">2</button>
+                <button onclick="AddSymbol('3')">3</button>
+                <button  class="orang" onclick="AddSymbol('+')">+</button>
+
+                
+
+                <button class="zero" onclick="AddSymbol('0')">0</button>
+                <button   onclick="AddSymbol('.')">.</button>
+                <button class="orang" onclick="calculateResult()">=</button>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        function clearDisplay() {
+            document.getElementById('display').value = ' ';
+          }
+        function AddSymbol(char) {
+            document.getElementById('display').value += char;
+          }
+          function calculateResult() {
+              const result = eval(document.getElementById('display').value);
+              document.getElementById('display').value = result;
+          }
+    </script>
+</body>
+
+</html>
